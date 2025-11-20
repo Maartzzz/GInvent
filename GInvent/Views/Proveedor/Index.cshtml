@@ -16,7 +16,7 @@
         <label for="contactoProveedor">Contacto (Celular):</label>
         <input type="number" id="contactoProveedor" name="contactoProveedor" required>
 
-        <button type="submit" class = "btn btn-primary mb-3">Guardar Proveedor</button>
+        <button type="submit" id="submitBtn" class = "btn btn-primary mb-3">Guardar Proveedor</button>
     </form>
 </div>
 
@@ -39,7 +39,7 @@
 					<td>@p.nombreProveedor</td>
 					<td>@p.contactoProveedor</td>
                     <td>
-                        <button type="button" class="btn btn-warning">Editar</button>
+                        <button onclick="editarProv(@p.idProveedor)" class="btn btn-warning">Editar</button>
                         <button onclick="eliminarProv(@p.idProveedor)" class="btn btn-danger">Eliminar</button>
                     </td>
                 </tr>
@@ -47,5 +47,8 @@
         </tbody>
     </table>
 </div>
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
-<script src="~/js/proveedor.js"></script>
+    <script src="~/js/proveedor.js"></script>
+}
